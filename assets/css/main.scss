@@ -16,32 +16,37 @@ $brand-colors: (
   "greenblue": #389092,
 );
 
+// Liquid에서 받은 값
 $theme-name: "{{ site.theme_color }}";
 $brand-name: "{{ site.brand_color }}";
+
+// 기본값 설정
 $theme-color: map-get($theme-colors, "snowwhite");
 $brand-color: map-get($brand-colors, "orangered");
 
+// 조건에 따라 색상 재설정
 @if map-has-key($theme-colors, $theme-name) {
   $theme-color: map-get($theme-colors, $theme-name);
-} @else if str-index($theme-name, "#") == 1 {
-  $theme-color: {{ site.theme_color | default: '#ffffff' }};
+} @else {
+  $theme-color: unquote("{{ site.theme_color | default: '#ffffff' }}");
 }
 
 @if map-has-key($brand-colors, $brand-name) {
   $brand-color: map-get($brand-colors, $brand-name);
-} @else if str-index($brand-name, "#") == 1 {
-  $brand-color: {{ site.brand_color | default: '#ff5100' }};
+} @else {
+  $brand-color: unquote("{{ site.brand_color | default: '#ff5100' }}");
 }
 
+// 사이트 설정 기반 변수
 $content-width: {{ site.content_width | default: '920px' }};
 
-// Click to top theme
+// Click to top theme colors
 $click-to-top-light-background-color: {{ site.click_to_top.light.background_color | default: "white" }};
 $click-to-top-light-color: {{ site.click_to_top.light.color | default: "#454545" }};
 $click-to-top-dark-background-color: {{ site.click_to_top.dark.background_color | default: "#34323d" }};
 $click-to-top-dark-color: {{ site.click_to_top.dark.color | default: "#bbb" }};
 
-// Selection styles
+// Text selection styles
 $selection-color: unquote("{{ site.selection.color }}");
 $selection-background-color: unquote("{{ site.selection.background_color }}");
 
@@ -52,4 +57,5 @@ $selection-background-color: unquote("{{ site.selection.background_color }}");
   $selection-background-color: rgba(invert($brand-color), 0.3);
 }
 
+// 실제 스타일 import
 @import "yat";
