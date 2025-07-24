@@ -220,6 +220,20 @@ click_to_top:
 #   enable_recommendations: false
 #   enable_comments: true
 
+comments:
+  active: giscus
+  giscus:
+    repo: sangjun121/sangjun121.github.io
+    repo_id: R_kgDOPRtdpw=
+    category: General
+    category_id: DIC_kwDOPRtdp84CtYhY
+
+# giscus:
+#     repo: sangjun121/sangjun121.github.io
+#     repo_id: R_kgDOPRtdpw=
+#     category: General
+#     category_id: DIC_kwDOPRtdp84CtYhY
+
 # Gitment comments
 # gitment:
 #   username: "Your GitHub username"

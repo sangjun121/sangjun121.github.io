@@ -91,6 +91,10 @@ sidebar:
       {%- include extensions/comments/utterances.html -%}
       {%- endif -%}
 
+      {%- if site.comments.active == 'giscus' -%}
+      {%- include extensions/comments/giscus.html -%}
+      {%- endif -%}
+
       {%- endif -%}
     </div>
     {%- endif -%}
