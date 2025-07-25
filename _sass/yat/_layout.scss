@@ -313,7 +313,6 @@ html {
       background-size: cover;
       background-position: center center;
       overflow: hidden;
-      transition: 0.2s all ease-in-out;
     }
   }
 
@@ -440,6 +439,8 @@ html {
     overflow-wrap: normal;
     word-wrap: normal;
     word-break: normal;
+    font-size: 1.2em;
+    line-height: 1.4;
 
     h2 {
       @include relative-font-size(2);
@@ -472,7 +473,8 @@ html {
 
     img:not(.emoji), svg, iframe {
       display: block;
-      max-height: 50vh;
+      max-width: 100%;
+      height: auto;
     }
 
     h2, h3, h4, h5, h6 {
@@ -608,7 +610,6 @@ html {
 
     & > *:first-child {
       @include center-image;
-      transition: 0.1s all ease-in-out;
     }
 
     & > video {
