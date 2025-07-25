@@ -99,7 +99,7 @@ html {
     @include relative-font-size(1.125);
     font-weight: $base-font-weight;
     letter-spacing: -1px;
-    transition: 0.1s filter color;
+    transition: 0.1s color;
 
     &, &:visited {
       color: $header-text-color;
