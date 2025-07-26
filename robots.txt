@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sangjun121.github.io/sitemap.xml
