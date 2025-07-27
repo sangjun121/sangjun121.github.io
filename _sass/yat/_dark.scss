@@ -142,29 +142,37 @@ html[data-theme="dark"]  {
       }
     }
 
-    .post-link-wrapper {
+    .post-item-link {
       &:hover {
         .post-title {
-          color: #79c0ff;
+          color: #e6edf3;
         }
       }
     }
 
     .post-title {
-      color: #58a6ff;
+      color: #e6edf3;
+    }
+    
+    .post-author-info {
+      color: #8b949e;
     }
 
     .post-subtitle {
       color: #8b949e;
     }
 
-    .post-meta {
+    .post-meta-info {
       color: #8b949e;
-    }
-
-    .post-tags .post-tag {
-      background-color: #30363d;
-      color: #8b949e;
+      
+      .post-date, .post-reading-time {
+        color: #8b949e;
+      }
+      
+      .post-tags-area .post-tag {
+        background-color: #30363d;
+        color: #8b949e;
+      }
     }
   }
 

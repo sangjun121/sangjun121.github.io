@@ -268,36 +268,107 @@ html {
   .post-list {
     margin-left: 0;
     list-style: none;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
 
     > li {
-      margin-bottom: $spacing-unit * 1.5;
-      padding-bottom: 30px;
-
+      margin-bottom: 48px;
+      
       &:not(:last-child) {
-        border-bottom: 1px solid #e3e3e3;
+        border-bottom: 1px solid #f2f2f2;
+        padding-bottom: 48px;
       }
     }
   }
 
-  .post-title {
-    margin-bottom: $spacing-unit * 0.2;
-    transition: 0.2s all;
-
-    a {
+  .post-item-link {
+    display: flex;
+    gap: 32px;
+    text-decoration: none;
+    color: inherit;
+    align-items: flex-start;
+    
+    &:hover {
       text-decoration: none;
+      
+      .post-title {
+        color: rgba(41, 41, 41, 0.8);
+      }
     }
   }
-
-  .post-link {
-    @include relative-font-size(1.65);
-    font-weight: $base-font-weight * 1.5;
-    color: #333;
+  
+  .post-content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .post-thumbnail {
+    flex: 0 0 200px;
+    
+    img {
+      width: 200px;
+      height: 134px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+  }
+  
+  .post-author-info {
+    color: #6b6b6b;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 4px;
+  }
+  
+  .post-title {
+    color: #292929;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    transition: color 0.2s ease;
+  }
+  
+  .post-subtitle {
+    color: #6b6b6b;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
-  .post-meta {
-    color: $grey-color;
-    font-size: $base-font-size;
-    margin-bottom: $spacing-unit * 0.5;
+  .post-meta-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #6b6b6b;
+    font-size: 13px;
+    
+    .post-date, .post-reading-time {
+      color: #6b6b6b;
+    }
+    
+    .post-tags-area {
+      display: flex;
+      gap: 8px;
+      margin-left: auto;
+      
+      .post-tag {
+        background-color: #f2f2f2;
+        color: #6b6b6b;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
   }
 
   .post-excerpt {
