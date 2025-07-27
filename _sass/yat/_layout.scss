@@ -414,23 +414,38 @@ html {
  */
 .post {
   @extend %post-header;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
 
   .post-header {
-    margin: 50px auto 60px;
-    padding: 0 0 20px;
-    border-bottom: 1px solid #ebebeb;
+    margin: 64px auto 48px;
+    padding: 0 0 32px;
+    border-bottom: 1px solid #f2f2f2;
+    max-width: 700px;
 
     .post-title {
-      margin-bottom: 6px;
+      margin-bottom: 16px;
+      font-size: 2.5em;
+      font-weight: 700;
+      line-height: 1.2;
+      color: rgba(41, 41, 41, 1);
+      letter-spacing: -0.02em;
     }
 
     .post-subtitle {
-      font-weight: 300;
+      font-weight: 400;
+      font-size: 1.4em;
+      color: rgba(117, 117, 117, 1);
+      line-height: 1.4;
+      margin-bottom: 24px;
     }
 
     .post-meta {
-      color: $grey-color;
-      padding-bottom: 15px;
+      color: rgba(117, 117, 117, 1);
+      padding-bottom: 0;
+      font-size: 0.9em;
+      font-weight: 400;
     }
   }
 
@@ -439,57 +454,114 @@ html {
     overflow-wrap: normal;
     word-wrap: normal;
     word-break: normal;
-    font-size: 1.2em;
-    line-height: 1.4;
+    font-size: 1.25em;
+    line-height: 1.75;
+    max-width: 700px;
+    margin: 0 auto $spacing-unit;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: rgba(41, 41, 41, 1);
 
     h2 {
-      @include relative-font-size(2);
+      @include relative-font-size(2.2);
+      font-weight: 700;
+      margin: 56px 0 20px;
 
       @include media-query($on-laptop) {
-        @include relative-font-size(1.75);
+        @include relative-font-size(1.9);
       }
     }
 
     h3 {
-      @include relative-font-size(1.625);
+      @include relative-font-size(1.75);
+      font-weight: 700;
+      margin: 48px 0 16px;
 
       @include media-query($on-laptop) {
-        @include relative-font-size(1.375);
+        @include relative-font-size(1.5);
       }
     }
 
     h4 {
-      @include relative-font-size(1.25);
+      @include relative-font-size(1.5);
+      font-weight: 600;
+      margin: 40px 0 16px;
 
       @include media-query($on-laptop) {
-        @include relative-font-size(1.125);
+        @include relative-font-size(1.25);
       }
     }
 
     img, svg, iframe {
-      margin-left: auto;
-      margin-right: auto;
+      margin: 48px auto;
+      display: block;
     }
 
     img:not(.emoji), svg, iframe {
-      display: block;
       max-width: 100%;
       height: auto;
+      border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
     }
 
     h2, h3, h4, h5, h6 {
-      margin: 60px 0 19px;
+      margin: 48px 0 16px;
+      font-weight: 700;
+      color: rgba(41, 41, 41, 1);
     }
 
     p {
-      margin-bottom: 24px;
+      margin-bottom: 30px;
+      font-weight: 400;
+      letter-spacing: -0.003em;
     }
 
     hr {
       height: 1px;
-      background-color: #ebebeb;
+      background-color: #f2f2f2;
       border: none;
-      margin: 60px 0;
+      margin: 48px auto;
+      width: 200px;
+    }
+
+    blockquote {
+      margin: 40px 0;
+      padding: 24px 32px;
+      border-left: 4px solid #1a8917;
+      background-color: #f9f9f9;
+      font-style: italic;
+      font-size: 1.1em;
+      color: rgba(41, 41, 41, 0.8);
+      border-radius: 0 8px 8px 0;
+    }
+
+    ul, ol {
+      margin: 24px 0;
+      padding-left: 32px;
+      
+      li {
+        margin-bottom: 12px;
+        line-height: 1.75;
+      }
+    }
+
+    code {
+      background-color: #f6f8fa;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      color: #d73a49;
+    }
+
+    pre {
+      margin: 32px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      
+      code {
+        color: inherit;
+        background: transparent;
+        padding: 24px;
+      }
     }
   }
 

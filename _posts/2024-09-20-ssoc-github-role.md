@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 1. 동아리 모집 프로세스 관리 서비스 SSOC의 협업 규칙(1편 Github Repository 관리) 
-subtitle: SSOC의 깃허브 레포지토리 관리 명세서
+subtitle: 우리 팀 SSOC는 깃허브 레포지토리를 어떻게 관리하는가
 author: 조상준
 categories: SSOC 온보딩
 banner:

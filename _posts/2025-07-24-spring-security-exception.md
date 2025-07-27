@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Security Filter에서 발생한 예외를 GlobalExceptionHandler로 보내는 것이 좋을까?
-subtitle: Spring Security Filter Chain의 예외 책임은 누가 가져야할까?
+subtitle: Spring Security Filter Chain의 예외 책임은 누가 가져야 할까에 대한 학습 기록
 author: 조상준
 categories: Spring Security SSOC
 banner:
