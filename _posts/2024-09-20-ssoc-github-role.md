@@ -13,10 +13,9 @@ banner:
   subheading_style: "color: black"
 tags: SSOC 온보딩
 comments: true
-sidebar: []
 ---
 
-#### 서론
+### 서론
 아래 문서는 현재 SSOC 프로젝트 팀원간의 Github Repository 관리 규칙을 명세한 온보딩 문서이다.    
 팀 내부 동기화를 위해 작성한 문서로 추후 개발 협업 간에 사용 가능하도록 공유하고자 한다.
 
