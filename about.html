@@ -1,17 +1,210 @@
 ---
 layout: about
 title: About
+sidebar: []
 ---
 
-<h2>About</h2>
+<style>
+.about-table {
+  width: 100% !important;
+  max-width: 100% !important;
+  table-layout: fixed !important;
+  border-collapse: collapse !important;
+  margin: 20px 0 !important;
+  display: table !important;
+}
+
+.about-table th, .about-table td {
+  padding: 12px !important;
+  text-align: left !important;
+  border: 1px solid #ddd !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+.about-table th {
+  background-color: #f5f5f5 !important;
+  font-weight: bold !important;
+}
+
+.about-table th:nth-child(1), .about-table td:nth-child(1) { 
+  width: 10% !important; 
+  min-width: 10% !important;
+  max-width: 10% !important;
+}
+.about-table th:nth-child(2), .about-table td:nth-child(2) { 
+  width: 20% !important; 
+  min-width: 20% !important;
+  max-width: 20% !important;
+}
+.about-table th:nth-child(3), .about-table td:nth-child(3) { 
+  width: 50% !important; 
+  min-width: 50% !important;
+  max-width: 50% !important;
+}
+.about-table th:nth-child(4), .about-table td:nth-child(4) { 
+  width: 20% !important; 
+  min-width: 20% !important;
+  max-width: 20% !important;
+}
+
+[data-theme="dark"] .about-table th {
+  background-color: #343a40 !important;
+  color: #e9ecef !important;
+}
+
+[data-theme="dark"] .about-table th, [data-theme="dark"] .about-table td {
+  border-color: #495057 !important;
+}
+
+/* 추가 강제 스타일 */
+table.about-table {
+  width: 100% !important;
+}
+
+.framework table.about-table {
+  width: 100% !important;
+}
+
+.main table.about-table {
+  width: 100% !important;
+}
+</style>
+
+<h2>About Me 👋</h2>
 
 <p>
-:art:&nbsp;Yet another theme for elegant writers with modern flat style
-and beautiful night mode.
+안녕하세요! 백엔드 개발자 조상준입니다. <br>
 </p>
 
 <p>
-Hey, nice to meet you, you found this Jekyll theme. Here the yet another
-theme is a modern theme, and it's quite clear, clean and neat for writers
-and posts.
+Hello! I'm Sangjun Cho, a backend developer. <br>
 </p>
+
+<h3>🧑‍💻 Project</h3>
+
+<table class="about-table">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>🧑‍💻 Activity</th>
+      <th>🎯 Overview</th>
+      <th>🎁 Repository</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2025</td>
+      <td><strong><a href="https://github.com/sipe-team">SIPE 3rd</a></strong></td>
+      <td>Studied Modular Monolithic architecture and practiced implementing a payments module using Spring Modulith (<a href="https://sangjunn.notion.site/162976a7f2238032b6ddd4b42ffe20f4?v=162976a7f2238130add3000c59067e25&pvs=4">Study log WIP</a>)</td>
+      <td><a href="https://github.com/sipe-team/3-2_smart_fintech.git">3-2_smart payments</a></td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td><strong><a href="https://github.com/sipe-team">SIPE 3rd</a></strong></td>
+      <td>Performance testing and case-based optimization of Spring applications (<a href="https://sangjunn.notion.site/12f976a7f223805c8395f9079cf16b36?v=12f976a7f22381a4805b000c6e05900e&pvs=4">Study log</a>)</td>
+      <td><a href="https://github.com/sipe-Team/3-1_spurt.git">3-1_spurt</a></td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td><strong>RYC</strong></td>
+      <td>Club recruitment management solution for Sejong University (<a href="http://sangjunn.notion.site">Retrospective</a>)</td>
+      <td><a href="https://github.com/Recruiting-Your-Club/api-Server-V1.git">ryc</a></td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td><strong>Microsoft Imagine Cup 2024</strong></td>
+      <td>Generative fairytale service for children (Morpheus)</td>
+      <td><a href="https://github.com/sangjun121/EN-Morpheus-FE.git">EN-Morpheus-FE</a></td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td><strong>11th K-Hackathon 🏆</strong></td>
+      <td>Guerrilla gardening service based on community voting (<a href="https://drive.google.com/file/d/13WG4F3IH1mdqHToAnbh5EB6S5h1vddG9/view">Chairman's Award from the Center for Software Education Innovation</a>)</td>
+      <td><a href="https://github.com/sangjun121/City-Gardening-Server.git">City-Gardening-Server</a></td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td><strong><a href="https://github.com/EnsharpSejong">EN# 23rd</a></strong></td>
+      <td>Object-oriented programming study using pure Java and C#</td>
+      <td><a href="https://github.com/Ensharp-Study/CHO-SANGJUN.git">EN-2023-Study</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>🤝 Opensource Contribution</h3>
+
+<ul>
+  <li><strong>spring-modulith</strong> <a href="https://github.com/spring-projects/spring-modulith">(project)</a>
+    <ul>
+      <li>GH-1130 | Add debug log describing selected externalized events <a href="https://github.com/spring-projects/spring-modulith/pull/1135">#1135</a></li>
+    </ul>
+  </li>
+</ul>
+
+<details>
+<summary>Korean Version 🇰🇷</summary>
+<div>
+  
+<h3>🧑‍💻 Project</h3>
+
+<table class="about-table">
+  <thead>
+    <tr>
+      <th>연도</th>
+      <th>🧑‍💻활동</th>
+      <th>🎯개요</th>
+      <th>🎁레포지토리</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2025</td>
+      <td><strong><a href="https://github.com/sipe-team">SIPE 3기</a></strong></td>
+      <td>Modular Monolithic 아키텍처 학습과 Spring Modulith를 이용한 payments 파트 실습 스터디(<a href="https://sangjunn.notion.site/162976a7f2238032b6ddd4b42ffe20f4?v=162976a7f2238130add3000c59067e25&pvs=4">학습내역 WIP</a>)</td>
+      <td><a href="https://github.com/sipe-team/3-2_smart_fintech.git">3-2_smart payments</a></td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td><strong><a href="https://github.com/sipe-team">SIPE 3기</a></strong></td>
+      <td>스프링 기반 애플리케이션의 성능 측정 및 케이스에 기반한 성능 개선 실습 스터디 (<a href="https://sangjunn.notion.site/12f976a7f223805c8395f9079cf16b36?v=12f976a7f22381a4805b000c6e05900e&pvs=4">학습내역</a>)</td>
+      <td><a href="https://github.com/sipe-Team/3-1_spurt.git">3-1_spurt</a></td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td><strong>RYC</strong></td>
+      <td>세종대학교 동아리원 모집 관리 솔루션 (<a href="http://sangjunn.notion.site">회고록</a>)</td>
+      <td><a href="https://github.com/Recruiting-Your-Club/api-Server-V1.git">ryc</a></td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td><strong>Microsoft Imagine Cup 2024</strong></td>
+      <td>어린이들을 위한 생성형 동화책 서비스(Morpheus)</td>
+      <td><a href="https://github.com/sangjun121/EN-Morpheus-FE.git">EN-Morpheus-FE</a></td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td><strong>제 11회 K-해커톤 🏆</strong></td>
+      <td>주민투표 기반 게릴라 가드닝 서비스 (<a href="https://drive.google.com/file/d/13WG4F3IH1mdqHToAnbh5EB6S5h1vddG9/view">소프트웨어교육혁신센터 이사장상</a>)</td>
+      <td><a href="https://github.com/sangjun121/City-Gardening-Server.git">City-Gardening-Server</a></td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td><strong><a href="https://github.com/EnsharpSejong">EN# 23기</a></strong></td>
+      <td>순수 Java와 C#을 활용한 객체지향 스터디</td>
+      <td><a href="https://github.com/Ensharp-Study/CHO-SANGJUN.git">EN-2023-Study</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>🤝 Opensource Contribution</h3>
+<ul>
+  <li><strong>spring-modulith</strong> <a href="https://github.com/spring-projects/spring-modulith">(project)</a>
+    <ul>
+      <li>GH-1130 | Add debug log describing selected externalized events <a href="https://github.com/spring-projects/spring-modulith/pull/1135">#1135</a></li>
+    </ul>
+  </li>
+</ul>
+    
+</div>
+</details>

@@ -4,8 +4,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
   {%- seo -%}
+  
+  <!-- hreflang tags for multilingual SEO -->
+  {% if page.lang %}
+    {% if page.lang == 'ko' and page.english_version %}
+      <link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.english_version }}" />
+      <link rel="alternate" hreflang="ko" href="{{ site.url }}{{ page.url }}" />
+      <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url }}" />
+    {% elsif page.lang == 'en' and page.korean_version %}
+      <link rel="alternate" hreflang="ko" href="{{ site.url }}{{ page.korean_version }}" />
+      <link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.url }}" />
+      <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.korean_version }}" />
+    {% endif %}
+  {% endif %}
+  
+  <!-- Language-specific meta tags -->
+  {% if page.lang %}
+    {% if page.lang == 'ko' %}
+      <meta name="language" content="Korean">
+      <meta property="og:locale" content="ko_KR">
+    {% elsif page.lang == 'en' %}
+      <meta name="language" content="English">
+      <meta property="og:locale" content="en_US">
+    {% endif %}
+  {% endif %}
+  
   <link rel="icon" href="{{ site.favicon }}">
-  <link rel="canonical" href="{{ site.url }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}"">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">

@@ -1,0 +1,28 @@
+---
+layout: framework
+sidebar: category-list
+---
+
+{%- assign name = 'excerpt.image_style' -%}
+{%- include functions.html func='get_value' default='z' -%}
+{%- assign image_style = return | append: '-image-style' -%}
+
+<div class="articles">
+  {% if page.banner == nil %}
+    {% assign banner = page.title %}
+  {% endif %}
+
+  {{ content }}
+
+  <div class="pagination">
+    <ul class="post-list {{ image_style }}">
+      {%- for post in site.posts -%}
+        {%- assign post_lang = post.lang | default: site.lang | default: 'ko' -%}
+        {%- if post_lang == 'en' -%}
+          {%- assign post_item_class = "" -%}
+          {%- include views/pagination-item.html -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>

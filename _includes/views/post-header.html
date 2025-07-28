@@ -1,5 +1,13 @@
 <header class="post-header">
-  <h1 class="post-title p-name" itemprop="name headline">{{ heading | default: page.title | escape }}</h1>
+  <h1 class="post-title p-name" itemprop="name headline">
+    {{ heading | default: page.title | escape }}
+    {%- assign post_lang = page.lang | default: site.lang | default: 'ko' -%}
+    {%- if post_lang == 'en' -%}
+      &nbsp;&nbsp;<span class="header-badge badge-lang" title="English Post">🇺🇸 EN</span>
+    {%- elsif post_lang == 'ko' -%}
+      &nbsp;&nbsp;<span class="header-badge badge-lang" title="Korean Post">🇰🇷 KO</span>
+    {%- endif -%}
+  </h1>
   <h2 class="post-subtitle">{{ subheading | default: page.subtitle | escape }}</h2>
 
   <div class="post-meta">

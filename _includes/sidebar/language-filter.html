@@ -1,0 +1,47 @@
+<div class="language-filter">
+  <div class="lang-buttons">
+    <button class="lang-btn active" data-lang="all">ALL</button>
+    <button class="lang-btn" data-lang="ko">KOR</button>
+    <button class="lang-btn" data-lang="en">ENG</button>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const langButtons = document.querySelectorAll('.lang-btn');
+  const posts = document.querySelectorAll('.post-item');
+  
+  langButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const selectedLang = this.dataset.lang;
+      
+      // 버튼 활성화 상태 변경
+      langButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      
+      // 포스트 필터링
+      posts.forEach(post => {
+        // 제목 영역에서 언어 뱃지를 찾음
+        const postTitle = post.querySelector('.post-title');
+        const langBadge = postTitle ? postTitle.querySelector('.badge-lang') : null;
+        
+        if (selectedLang === 'all') {
+          post.style.display = 'block';
+        } else if (selectedLang === 'ko') {
+          if (!langBadge || langBadge.textContent.includes('KO')) {
+            post.style.display = 'block';
+          } else {
+            post.style.display = 'none';
+          }
+        } else if (selectedLang === 'en') {
+          if (langBadge && langBadge.textContent.includes('EN')) {
+            post.style.display = 'block';
+          } else {
+            post.style.display = 'none';
+          }
+        }
+      });
+    });
+  });
+});
+</script>

@@ -1,7 +1,9 @@
 ---
+layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Posts -->
   {% for post in site.posts %}
     <url>
       <loc>{{ site.url }}{{ post.url }}</loc>
@@ -18,11 +20,50 @@
       {% endif %}
 
       {% if post.sitemap.priority == null %}
-          <priority>0.5</priority>
+          <priority>0.8</priority>
       {% else %}
         <priority>{{ post.sitemap.priority }}</priority>
       {% endif %}
 
     </url>
+  {% endfor %}
+  
+  <!-- Pages -->
+  {% assign homepage_added = false %}
+  {% for page in site.pages %}
+    {% unless page.sitemap and page.sitemap.exclude == "yes" %}
+      {% unless page.url contains '/sitemap.xml' or page.url contains '/feed.xml' or page.url contains '.map' or page.url contains '/assets/css/' or page.url contains '404.html' or page.url == '/about/' or page.url contains 'google' or page.url contains 'naver' %}
+        {% if page.url == '/' %}
+          {% unless homepage_added %}
+            <url>
+              <loc>{{ site.url }}{{ page.url }}</loc>
+              {% if page.lastmod %}
+                <lastmod>{{ page.lastmod | date_to_xmlschema }}</lastmod>
+              {% elsif page.date %}
+                <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+              {% else %}
+                <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+              {% endif %}
+              <changefreq>daily</changefreq>
+              <priority>1.0</priority>
+            </url>
+            {% assign homepage_added = true %}
+          {% endunless %}
+        {% else %}
+          <url>
+            <loc>{{ site.url }}{{ page.url }}</loc>
+            {% if page.lastmod %}
+              <lastmod>{{ page.lastmod | date_to_xmlschema }}</lastmod>
+            {% elsif page.date %}
+              <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+            {% else %}
+              <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+            {% endif %}
+            <changefreq>weekly</changefreq>
+            <priority>0.5</priority>
+          </url>
+        {% endif %}
+      {% endunless %}
+    {% endunless %}
   {% endfor %}
 </urlset>

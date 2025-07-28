@@ -68,37 +68,25 @@ yat:
 # enableDNT: "false"
 
 # If you want to generate website sitemap, you can set true
-# sitemap: false
+sitemap: true
 
 # If you want to change site language, you can set lang option
-# lang: "en"  # default lang is en
+lang: "ko"  # default site language
 
 # Translate languges
 # langs refer to https://cloud.google.com/translate/docs/languages
-# translate_langs:
-#   - lang: en
-#     img: https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png
-#     text: English
-#
-#   - lang: fr
-#     img: https://cdn.countryflags.com/thumbs/france/flag-400.png
-#     text: French
-#
-#   - lang: zh-CN
-#     img: https://cdn.countryflags.com/thumbs/china/flag-400.png
-#     text: Chinese(Simple)
-#
-#   - lang: ja
-#     img: https://cdn.countryflags.com/thumbs/japan/flag-400.png
-#     text: Japanese
-#
-#   - lang: ko
-#     img: https://cdn.countryflags.com/thumbs/south-korea/flag-400.png
-#     text: Korean
-#
-#   - lang: ru
-#     img: https://cdn.countryflags.com/thumbs/russia/flag-400.png
-#     text: Russian
+translate_langs:
+  - lang: ko
+    img: https://cdn.countryflags.com/thumbs/south-korea/flag-400.png
+    text: 한국어
+
+  - lang: en
+    img: https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png
+    text: English
+
+  - lang: fr
+    img: https://cdn.countryflags.com/thumbs/france/flag-400.png
+    text: French
 
 # You can choose a theme color
 # Default theme colors as below:
@@ -260,6 +248,21 @@ kramdown:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-sitemap
   - jekyll-paginate
   - jekyll-spaceship
+
+# Sitemap defaults for all pages
+defaults:
+  - scope:
+      path: ""
+    values:
+      sitemap:
+        changefreq: daily
+        priority: 0.5
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      sitemap:
+        changefreq: daily
+        priority: 0.7

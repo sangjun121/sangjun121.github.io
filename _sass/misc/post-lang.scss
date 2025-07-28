@@ -1,0 +1,94 @@
+// Language badge styles
+.post-badges {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 8px;
+}
+
+.post-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-top {
+  background-color: #ff6b35;
+  color: white;
+}
+
+.badge-new {
+  background-color: #28a745;
+  color: white;
+}
+
+.badge-lang {
+  background-color: #f8f9fa;
+  color: #495057;
+  border: 1px solid #dee2e6;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .badge-lang {
+    background-color: #343a40;
+    color: #e9ecef;
+    border-color: #495057;
+  }
+}
+
+// Theme-specific dark mode (if using theme toggle)
+[data-theme="dark"] .badge-lang {
+  background-color: #343a40;
+  color: #e9ecef;
+  border-color: #495057;
+}
+
+// Header language badges
+.header-post-badges {
+  margin-left: 8px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background-color: #f8f9fa;
+  color: #495057;
+  border: 1px solid #dee2e6;
+  text-decoration: none;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+// Dark mode for header badges
+@media (prefers-color-scheme: dark) {
+  .header-badge.badge-lang {
+    background-color: #343a40;
+    color: #e9ecef;
+    border-color: #495057;
+  }
+}
+
+[data-theme="dark"] .header-badge.badge-lang {
+  background-color: #343a40;
+  color: #e9ecef;
+  border-color: #495057;
+}

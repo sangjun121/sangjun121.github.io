@@ -1,0 +1,64 @@
+.language-filter {
+  margin-bottom: 20px;
+
+  .lang-buttons {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .lang-btn {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    transition: all 0.15s ease-in-out;
+    outline: none;
+    
+    &:hover {
+      background-color: #f8f9fa;
+      border-color: #bbb;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    &.active {
+      background-color: #1a8917;
+      color: white;
+      border-color: #1a8917;
+      box-shadow: 0 2px 4px rgba(26, 137, 23, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+// Dark mode support
+[data-theme="dark"] {
+  .language-filter .lang-btn {
+    background-color: #2d2d2d;
+    color: #e1e1e1;
+    border-color: #444;
+
+    &:hover {
+      background-color: #3a3a3a;
+      border-color: #666;
+      box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    }
+
+    &.active {
+      background-color: #1a8917;
+      color: white;
+      border-color: #1a8917;
+      box-shadow: 0 2px 4px rgba(26, 137, 23, 0.4);
+    }
+  }
+}

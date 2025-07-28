@@ -4,6 +4,7 @@ title: Security Filter에서 발생한 예외를 GlobalExceptionHandler로 보�
 subtitle: Spring Security Filter Chain의 예외 책임은 누가 가져야 할까에 대한 학습 기록
 author: 조상준
 categories: Spring Security SSOC
+lang: ko
 banner:
   image: ../assets/images/springsecurityexception/securityExceptionHandling003.png
   background: "#000"
@@ -12,10 +13,13 @@ banner:
   heading_style: "font-size: 4.25em; font-weight: bold;"
   subheading_style: "color: gray"
 tags: Spring Security SSOC
-top: 1
 comments: true
 sidebar: []
+english_version: /spring/security/ssoc/2025/07/24/english-spring-security-exception
 ---
+
+> 📖 **English Version Available**: [Read this post in English](/spring/security/ssoc/2025/07/24/english-spring-security-exception)
+
 ## 현재 상황
 현재 우리 서비스 SSOC는 Spring Security의 Filter에 로그인 로직과 JWT 검증 로직을 구현해 둔 상태이다. 
 

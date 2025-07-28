@@ -1,4 +1,13 @@
 <span class="post-badges">
-  <span class="post-badge badge-top">TOP</span>
-  <span class="post-badge badge-new">NEW</span>
+  {%- if post.top -%}
+    <span class="post-badge badge-top">TOP</span>
+  {%- endif -%}
+  
+  {%- assign current_date = 'now' | date: '%s' -%}
+  {%- assign post_date = post.date | date: '%s' -%}
+  {%- assign days_diff = current_date | minus: post_date | divided_by: 86400 -%}
+  {%- if days_diff <= 7 -%}
+    <span class="post-badge badge-new">NEW</span>
+  {%- endif -%}
+  
 </span>

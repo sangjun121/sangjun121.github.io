@@ -40,6 +40,7 @@
               {%- endif -%}
             {%- endfor -%}
 
+            <!-- Google Translate 기능 완전 제거
             {%- assign name = 'translate_langs' -%}
             {%- include functions.html func='get_value' -%}
             {%- assign translate_langs = return -%}
@@ -51,6 +52,7 @@
                   {%- include extensions/google-translate.html -%}
               </div>
             {%- endif -%}
+            -->
           </div>
         </nav>
       {%- endif -%}

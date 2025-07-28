@@ -39,6 +39,12 @@
       </div>
       <h2 class="post-title">
         {{ post.title | escape }}
+        {%- assign post_lang = post.lang | default: site.lang | default: 'ko' -%}
+        {%- if post_lang == 'en' -%}
+          &nbsp;&nbsp;<span class="header-badge badge-lang" title="English Post">🇺🇸 EN</span>
+        {%- elsif post_lang == 'ko' -%}
+          &nbsp;&nbsp;<span class="header-badge badge-lang" title="Korean Post">🇰🇷 KO</span>
+        {%- endif -%}
         {%- include views/post-badges.html -%}
       </h2>
       <div class="post-subtitle">

@@ -1,3 +1,10 @@
+<!-- Google Translate 기능 비활성화
 <div>
-{%- include extensions/google-translate.html -%}
+{%- assign post_lang = page.lang | default: site.lang | default: 'ko' -%}
+{%- if post_lang == 'ko' -%}
+  {%- assign translate_langs = site.translate_langs -%}
+  {%- assign lang = site.lang -%}
+  {%- include extensions/google-translate.html translate_langs=translate_langs lang=lang -%}
+{%- endif -%}
 </div>
+-->
