@@ -58,14 +58,18 @@
       }
     }
 
-    // Enhanced throttling for better performance
+    // Balanced throttling for smooth but performant progress bar
     let ticking = false;
     let lastUpdate = 0;
+    
     function requestTick() {
       const now = Date.now();
-      if (!ticking && now - lastUpdate > 50) { // Limit to 20fps for better performance
+      
+      // Update every 50ms for smoother animation while maintaining performance
+      if (!ticking && now - lastUpdate > 50) {
         ticking = true;
         lastUpdate = now;
+        
         requestAnimationFrame(() => {
           updateProgress();
           ticking = false;
