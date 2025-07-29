@@ -6,7 +6,7 @@ author: 조상준
 categories: Spring Validation
 lang: ko
 banner:
-  image: ../assets/images/validation/validation00101
+  image: ../assets/images/validation/validation001.png
   background: "#000"
   height: "100vh"
   min_height: "38vh"
@@ -15,9 +15,10 @@ banner:
 tags: Spring Validation
 comments: true
 sidebar: []
-english_version: 
+english_version: /spring/validation/2025/07/28/english-validation-1.html
 ---
-> 📖 **English Version Available**: [Read this post in English]()
+> 📖 **English Version Available**: [Read this post in English](/spring/validation/2025/07/28/english-validation-1.html)
+
 ## 현재 상황
 
 현재 각 도메인 모듈은 팀원 별로 개별적으로 구현되어 있으며, 그 과정에서 **검증 로직이 일관성 없이 다양한 레이어에 흩어져 있는 문제가 보였다. 이에 따라 다음과 같은 문제점이 발견되었다.**
@@ -305,6 +306,8 @@ ResponseDTO의 생성 목적이 결국 이를 방어하기 위함이므로, Resp
 ## 회고
 
 우리 서비스의 아키텍처를 기반으로 어떤 계층이 검증 책임을 가져야 하는지 정의하는 시간을 가졌다. 서비스의 아키텍처가 이와 다르다면 조금의 차이는 있겠지만, 결국 각 레이어의 책임과 역할을 토대로, 검증을 누가 수행할 것인가 결정하는 것이 핵심일 것이다.
+
+글에 대해 미쳐 생각하지 못했던 의견이나 잘못된 지점에 대한 피드백은 언제나 환영합니다!
 
 ### 참고 레퍼런스
 
