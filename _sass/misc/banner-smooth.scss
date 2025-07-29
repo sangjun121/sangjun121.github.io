@@ -1,0 +1,23 @@
+// Enhanced banner smooth transitions
+.page-banner {
+  transition: height 0.3s ease-out !important;
+}
+
+// Smooth transitions for banner content as well
+.page-banner .page-banner-inner > *:first-child > * {
+  transition: all 0.3s ease-out !important;
+}
+
+// Ensure header transitions are also smooth
+.site-header {
+  transition: height 0.3s ease-out, text-shadow 0.3s ease-out, top 0.3s ease-out !important;
+}
+
+.site-header-transparent {
+  transition: 0.3s height, background-color, box-shadow !important;
+}
+
+.site-header-transparent .site-brand-inner,
+.site-header-transparent .page-link {
+  transition: 0.3s color !important;
+}

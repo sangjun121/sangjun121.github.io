@@ -87,9 +87,23 @@
       documentElement.setAttribute("data-scroll-status", scrollStatus);
     }
 
-    window.addEventListener('scroll', function(e) {
-      storeScrollData();
-    });
+    // Throttle header scroll updates for better performance
+    var headerTicking = false;
+    var lastHeaderUpdate = 0;
+    
+    function throttledStoreScrollData() {
+      var now = Date.now();
+      if (!headerTicking && now - lastHeaderUpdate > 16) { // ~60fps for header
+        headerTicking = true;
+        lastHeaderUpdate = now;
+        requestAnimationFrame(function() {
+          storeScrollData();
+          headerTicking = false;
+        });
+      }
+    }
+
+    window.addEventListener('scroll', throttledStoreScrollData, { passive: true });
 
     storeScrollData();
   }
