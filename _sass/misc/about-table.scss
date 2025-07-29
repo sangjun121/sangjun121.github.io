@@ -1,0 +1,79 @@
+// About page table styles
+.about-table {
+  width: 100% !important;
+  max-width: 100% !important;
+  table-layout: fixed !important;
+  border-collapse: collapse !important;
+  margin: 20px 0 !important;
+  display: table !important;
+}
+
+.about-table th, .about-table td {
+  padding: 12px !important;
+  text-align: left !important;
+  border: 1px solid #ddd !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+.about-table th {
+  background-color: #f8f9fa !important;
+  font-weight: bold !important;
+}
+
+.about-table th:nth-child(1), .about-table td:nth-child(1) { 
+  width: 10% !important; 
+  min-width: 10% !important;
+  max-width: 10% !important;
+}
+
+.about-table th:nth-child(2), .about-table td:nth-child(2) { 
+  width: 20% !important; 
+  min-width: 20% !important;
+  max-width: 20% !important;
+}
+
+.about-table th:nth-child(3), .about-table td:nth-child(3) { 
+  width: 50% !important; 
+  min-width: 50% !important;
+  max-width: 50% !important;
+}
+
+.about-table th:nth-child(4), .about-table td:nth-child(4) { 
+  width: 20% !important; 
+  min-width: 20% !important;
+  max-width: 20% !important;
+}
+
+// Dark mode support
+[data-theme="dark"] .about-table th {
+  background-color: #343a40 !important;
+  color: #e9ecef !important;
+}
+
+[data-theme="dark"] .about-table th, 
+[data-theme="dark"] .about-table td {
+  border-color: #495057 !important;
+}
+
+// Additional force styles
+table.about-table {
+  width: 100% !important;
+}
+
+.framework table.about-table {
+  width: 100% !important;
+}
+
+.main table.about-table {
+  width: 100% !important;
+}
+
+.post-content table.about-table {
+  width: 100% !important;
+}
+
+// Override any existing table styles
+.post table.about-table {
+  width: 100% !important;
+}

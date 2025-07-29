@@ -1,0 +1,60 @@
+// Post heading hover effects
+.post-content {
+  h1, h2, h3, h4, h5, h6 {
+    transition: color 0.2s ease-in-out;
+    cursor: pointer;
+    
+    &:hover {
+      color: #28a745 !important;
+    }
+  }
+}
+
+// Dark mode support
+[data-theme="dark"] .post-content {
+  h1, h2, h3, h4, h5, h6 {
+    &:hover {
+      color: #40e070 !important;
+    }
+  }
+}
+
+// Additional selectors for different contexts
+.post {
+  h1, h2, h3, h4, h5, h6 {
+    transition: color 0.2s ease-in-out;
+    cursor: pointer;
+    
+    &:hover {
+      color: #28a745 !important;
+    }
+  }
+}
+
+[data-theme="dark"] .post {
+  h1, h2, h3, h4, h5, h6 {
+    &:hover {
+      color: #40e070 !important;
+    }
+  }
+}
+
+// For article context
+article {
+  h1, h2, h3, h4, h5, h6 {
+    transition: color 0.2s ease-in-out;
+    cursor: pointer;
+    
+    &:hover {
+      color: #28a745 !important;
+    }
+  }
+}
+
+[data-theme="dark"] article {
+  h1, h2, h3, h4, h5, h6 {
+    &:hover {
+      color: #40e070 !important;
+    }
+  }
+}

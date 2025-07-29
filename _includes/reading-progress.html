@@ -1,0 +1,79 @@
+<!-- Reading Progress Bar -->
+<div class="reading-progress" id="reading-progress"></div>
+
+<script>
+(function() {
+  // Create reading progress functionality
+  function initReadingProgress() {
+    const progressBar = document.getElementById('reading-progress');
+    if (!progressBar) return;
+
+    function updateProgress() {
+      // Get scroll position
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Get total scrollable height
+      const docHeight = Math.max(
+        document.body.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.clientHeight,
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight
+      );
+      
+      const winHeight = window.innerHeight;
+      const maxScrollTop = docHeight - winHeight;
+      
+      // Calculate progress percentage (0-100)
+      let scrollPercent = 0;
+      if (maxScrollTop > 0) {
+        scrollPercent = (scrollTop / maxScrollTop) * 100;
+      }
+      
+      // Ensure percentage is between 0 and 100
+      const scrollPercentRounded = Math.min(100, Math.max(0, Math.round(scrollPercent)));
+      
+      // Update progress bar width
+      progressBar.style.width = scrollPercentRounded + '%';
+      
+      // Show/hide progress bar based on scroll position
+      if (scrollTop > 50) {
+        progressBar.style.opacity = '1';
+      } else {
+        progressBar.style.opacity = '0';
+      }
+      
+      // Add complete class when reaching 100%
+      if (scrollPercentRounded >= 95) { // Show complete at 95% to account for rounding
+        progressBar.classList.add('complete');
+      } else {
+        progressBar.classList.remove('complete');
+      }
+    }
+
+    // Throttle function for better performance
+    let ticking = false;
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(updateProgress);
+        ticking = true;
+        setTimeout(() => { ticking = false; }, 16); // ~60fps
+      }
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', requestTick, { passive: true });
+    window.addEventListener('resize', requestTick);
+    
+    // Initial call
+    updateProgress();
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initReadingProgress);
+  } else {
+    initReadingProgress();
+  }
+})();
+</script>

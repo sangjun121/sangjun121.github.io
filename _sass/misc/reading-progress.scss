@@ -1,0 +1,46 @@
+// Reading progress bar
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(to right, #28a745, #20c997);
+  z-index: 1000;
+  transition: width 0.1s ease-out, opacity 0.3s ease-in-out;
+  box-shadow: 0 1px 3px rgba(40, 167, 69, 0.3);
+  opacity: 0;
+}
+
+// Dark mode support
+[data-theme="dark"] .reading-progress {
+  background: linear-gradient(to right, #40e070, #4dd4ac);
+  box-shadow: 0 1px 3px rgba(64, 224, 112, 0.3);
+}
+
+// Animation effect when reaching 100%
+.reading-progress.complete {
+  animation: completeFlash 0.3s ease-in-out;
+}
+
+@keyframes completeFlash {
+  0% { 
+    opacity: 1;
+    height: 3px;
+  }
+  50% { 
+    opacity: 0.7;
+    height: 4px;
+  }
+  100% { 
+    opacity: 1;
+    height: 3px;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .reading-progress {
+    height: 2px;
+  }
+}
