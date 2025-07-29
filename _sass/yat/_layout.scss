@@ -63,7 +63,7 @@ html {
   background-color: $header-background-color;
   height: $header-height;
   width: 100%;
-  transition: height 0.2s, text-shadow 0.2s, top 0.2s;
+  transition: top 0.2s ease-out;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, .06);
 
   // Positioning context for the mobile navigation icon
@@ -311,7 +311,7 @@ html {
     img {
       width: 200px;
       height: 134px;
-      object-fit: cover;
+      object-fit: fill;
       border-radius: 4px;
     }
   }
@@ -488,6 +488,23 @@ html {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
+
+  // Center align banner content only for post pages
+  .page-banner .page-banner-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+    text-align: center !important;
+
+    .post-subtitle {
+      padding-right: 0 !important;
+    }
+
+    .post-tags {
+      padding-right: 0 !important;
+    }
+  }
 
   .post-header {
     margin: 64px auto 48px;
@@ -743,7 +760,6 @@ html {
   position: relative;
   height: $banner-height;
   background-color: $banner-background;
-  transition: height 0.2s;
 
   .page-banner-img {
     position: absolute;
@@ -797,7 +813,6 @@ html {
         letter-spacing: -1px;
         margin-bottom: 0.1em;
         font-weight: normal;
-        transition: 0.2s all;
 
         @include media-query($on-palm) {
           @include relative-font-size(1.975);
@@ -807,7 +822,6 @@ html {
       > :nth-child(2) {
         font-weight: lighter;
         margin-bottom: 0.8em;
-        transition: 0.2s all;
 
         @include media-query($on-palm) {
           @include relative-font-size(1.175);

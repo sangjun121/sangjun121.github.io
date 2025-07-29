@@ -29,11 +29,23 @@
     {%- assign unit = banner_height | replace_first: num -%}
     {%- assign banner_min_height = banner_min_height | default: banner_height -%}
     html .page-banner {
-      height:  {{ banner_height | times: 0.368 | append: unit }};
+      height:  {{ banner_height | times: 0.6 | append: unit }};
       min-height: {{ banner_min_height }};
+    }
+    html .page-banner .page-banner-inner > *:first-child > *:nth-child(1) {
+      font-size: 2.5rem !important;
+    }
+    html .page-banner .page-banner-inner > *:first-child > *:nth-child(2) {
+      font-size: 1.2rem !important;
     }
     html[data-scroll-status="top"] .page-banner {
       height: {{ banner_height }};
+    }
+    html[data-scroll-status="top"] .page-banner .page-banner-inner > *:first-child > *:nth-child(1) {
+      font-size: 3.9rem !important;
+    }
+    html[data-scroll-status="top"] .page-banner .page-banner-inner > *:first-child > *:nth-child(2) {
+      font-size: 1.525rem !important;
     }
   </style>
   {%- endif -%}
