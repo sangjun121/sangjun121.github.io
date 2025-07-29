@@ -47,6 +47,34 @@
     html[data-scroll-status="top"] .page-banner .page-banner-inner > *:first-child > *:nth-child(2) {
       font-size: 1.525rem !important;
     }
+    
+    /* Mobile responsive banner text */
+    @media (max-width: 1024px) {
+      html .page-banner {
+        height: {{ banner_height | times: 0.4 | append: unit }} !important;
+      }
+      html[data-scroll-status="top"] .page-banner {
+        height: {{ banner_height | times: 0.7 | append: unit }} !important;
+      }
+      html .page-banner .page-banner-inner {
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        padding-top: 30px !important;
+        text-align: center !important;
+      }
+      html .page-banner .page-banner-inner > *:first-child > *:nth-child(1) {
+        font-size: 1.4rem !important;
+      }
+      html .page-banner .page-banner-inner > *:first-child > *:nth-child(2) {
+        font-size: 0.9rem !important;
+      }
+      html[data-scroll-status="top"] .page-banner .page-banner-inner > *:first-child > *:nth-child(1) {
+        font-size: 1.8rem !important;
+      }
+      html[data-scroll-status="top"] .page-banner .page-banner-inner > *:first-child > *:nth-child(2) {
+        font-size: 1rem !important;
+      }
+    }
   </style>
   {%- endif -%}
 

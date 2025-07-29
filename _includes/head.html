@@ -35,6 +35,51 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
+  
+  <!-- 모바일 강제 스타일 -->
+  <style>
+  @media screen and (max-width: 1024px) {
+    /* 포스트 배너 텍스트 위로 이동 */
+    body .post .page-banner .page-banner-inner {
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+      padding-top: 15px !important;
+      display: flex !important;
+      height: 100% !important;
+      text-align: center !important;
+    }
+    
+    /* 홈 배너 텍스트도 위로 이동 */
+    body .page-banner .page-banner-inner {
+      padding-top: 20px !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+    
+    /* 포스트 컨테이너 여백 축소 */
+    body .post {
+      padding: 0 3px !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+    }
+    
+    /* 포스트 헤더 여백 축소 */
+    body .post .post-header {
+      padding: 0 3px 20px !important;
+      margin: 15px 0 20px !important;
+      max-width: 100% !important;
+    }
+    
+    /* 포스트 내용 여백 축소 */
+    body .post .post-content {
+      padding: 0 3px !important;
+      margin: 0 0 25px !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+  }
+  </style>
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
   {%- include extensions/google-analytics.html -%}
