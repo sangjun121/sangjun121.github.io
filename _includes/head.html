@@ -5,6 +5,63 @@
   <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
   {%- seo -%}
   
+  <!-- Enhanced Open Graph metadata -->
+  <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  {% if page.image %}
+    <meta property="og:image" content="{{ site.url }}{{ page.image }}">
+  {% elsif site.logo %}
+    <meta property="og:image" content="{{ site.url }}{{ site.logo }}">
+  {% endif %}
+  
+  <!-- Twitter Card metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@{{ site.twitter_username | default: site.author }}">
+  <meta name="twitter:creator" content="@{{ page.author | default: site.author }}">
+  {% if page.image %}
+    <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
+  {% endif %}
+  
+  <!-- Article metadata for blog posts -->
+  {% if page.date %}
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+    <meta property="article:author" content="{{ page.author | default: site.author }}">
+    {% for tag in page.tags %}
+      <meta property="article:tag" content="{{ tag }}">
+    {% endfor %}
+    {% for category in page.categories %}
+      <meta property="article:section" content="{{ category }}">
+    {% endfor %}
+  {% endif %}
+  
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{% if page.date %}BlogPosting{% else %}WebSite{% endif %}",
+    "name": "{{ page.title | default: site.title | escape }}",
+    "headline": "{{ page.title | default: site.title | escape }}",
+    "description": "{{ page.excerpt | default: site.description | strip_html | truncate: 160 | escape }}",
+    "url": "{{ site.url }}{{ page.url }}",
+    {% if page.date %}
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+    {% endif %}
+    "author": {
+      "@type": "Person",
+      "name": "{{ page.author | default: site.author }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.title }}",
+      "url": "{{ site.url }}"
+    }
+    {% if page.image %},
+    "image": "{{ site.url }}{{ page.image }}"
+    {% endif %}
+  }
+  </script>
+  
   <!-- hreflang tags for multilingual SEO -->
   {% if page.lang %}
     {% if page.lang == 'ko' and page.english_version %}
@@ -30,11 +87,12 @@
   {% endif %}
   
   <link rel="icon" href="{{ site.favicon }}">
-  <link rel="canonical" href="{{ site.url }}{{ page.url }}"">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/author-hover.js" | relative_url }}"></script>
   
   <!-- 모바일 강제 스타일 -->
   <style>
@@ -88,5 +146,6 @@
   {%- endif -%}
   {%- include extensions/code-highlight.html -%}
   {%- include extensions/photo-swipe.html -%}
+  {%- include extensions/lazy-loading.html -%}
   {%- include custom-head.html -%}
 </head>

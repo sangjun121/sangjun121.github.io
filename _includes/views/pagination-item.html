@@ -31,11 +31,17 @@
   <a href="{{ post_url }}" class="post-item-link">
     <div class="post-content-area">
       <div class="post-author-info">
-        {%- if post.author -%}
-        {{ post.author | escape }}
-        {%- else -%}
-        {{ site.author | escape }}
-        {%- endif -%}
+        <img src="{{ site.author_info.avatar | default: '/assets/images/profile-avatar.jpeg' }}" 
+             alt="Author Avatar" 
+             class="author-avatar">
+        <span class="author-name">
+          {%- if post.author -%}
+          {{ post.author | escape }}
+          {%- else -%}
+          {{ site.author | escape }}
+          {%- endif -%}
+        </span>
+        
       </div>
       <h2 class="post-title">
         {{ post.title | escape }}

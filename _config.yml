@@ -28,6 +28,16 @@ title: 조상준의 Tech Blog
 email: juncho12011201@gmail.com
 author: sangjun121
 
+# Author settings
+author_info:
+  name: "Sangjun Cho (조상준)"
+  bio: "Computer Engineering Student at Sejong Univ"
+  avatar: "/assets/images/profile-avatar.jpeg"
+  location: "France, Paris"
+  website: "https://sangjun121.github.io"
+  contact: "juncho12011201@gmail.com"
+  github: "https://github.com/sangjun121"
+
 # Copyright setting
 # You can use any html code, currently below placeholders are available:
 # * current year: {currentYear}
@@ -210,13 +220,13 @@ comments:
   active: giscus
   giscus:
     repo: sangjun121/sangjun121.github.io
-    repo_id: R_kgDOPRtdpw=
+    repo_id: R_kgDOPRtdpw
     category: General
     category_id: DIC_kwDOPRtdp84CtYhY
 
 # giscus:
 #     repo: sangjun121/sangjun121.github.io
-#     repo_id: R_kgDOPRtdpw=
+#     repo_id: R_kgDOPRtdpw
 #     category: General
 #     category_id: DIC_kwDOPRtdp84CtYhY
 

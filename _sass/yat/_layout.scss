@@ -308,6 +308,7 @@ html {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    justify-content: flex-start; /* 컨텐츠를 위쪽으로 정렬하여 공백 제거 */
   }
   
   .post-thumbnail {
@@ -334,10 +335,127 @@ html {
   }
   
   .post-author-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     color: #6b6b6b;
     font-size: 13px;
     font-weight: 400;
     margin-bottom: 4px;
+    position: relative;
+    
+    .author-avatar {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #e5e5e5;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        transform: scale(1.1);
+        border-color: #7DB150;
+      }
+    }
+    
+    .author-name {
+      cursor: pointer;
+      transition: color 0.2s ease;
+      
+      &:hover {
+        color: #7DB150;
+      }
+    }
+    
+    /* 전역 프로필 카드 - DOM에서 완전히 분리 */
+    #global-author-profile-card {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: white;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 14px;
+      min-width: 280px;
+      max-width: 320px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.2s ease;
+      pointer-events: none;
+      
+      &.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      
+      .profile-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 10px;
+        
+        .profile-avatar {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          object-fit: cover;
+          flex-shrink: 0;
+        }
+        
+        .profile-info {
+          flex: 1;
+          min-width: 0;
+          
+          h4 {
+            margin: 0 0 4px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #292929;
+            line-height: 1.3;
+            word-wrap: break-word;
+          }
+          
+          p {
+            margin: 0;
+            font-size: 13px;
+            color: #6b6b6b;
+            line-height: 1.4;
+            word-wrap: break-word;
+          }
+        }
+      }
+      
+      .profile-links {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        
+        .profile-item {
+          font-size: 12px;
+          color: #6b6b6b;
+          line-height: 1.4;
+          
+          .profile-link {
+            color: #7DB150;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            
+            &:hover {
+              color: #5a8a3a;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    
+    /* CSS 호버는 제거하고 JavaScript로만 제어 */
   }
   
   .post-title {
@@ -345,13 +463,19 @@ html {
     font-size: 22px;
     font-weight: 700;
     line-height: 1.3;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     transition: color 0.2s ease;
+    
+    /* 제목은 자연스럽게 표시하되 3줄로 제한 */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     
     @include media-query($on-laptop) {
       font-size: 20px;
       line-height: 1.4;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
   }
   
@@ -370,7 +494,7 @@ html {
       font-size: 15px;
       line-height: 1.5;
       margin-bottom: 12px;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
     }
   }
 
@@ -885,6 +1009,8 @@ html {
 
     & > *:first-child {
       @include center-image;
+      transition: none !important;
+      animation: none !important;
     }
 
     & > video {

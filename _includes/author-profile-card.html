@@ -1,0 +1,24 @@
+<!-- 전역 프로필 카드 - 한 번만 생성 -->
+<div id="global-author-profile-card" class="author-profile-card">
+  <div class="profile-header">
+    <img src="{{ site.author_info.avatar | default: '/assets/images/profile-avatar.jpeg' }}" 
+         alt="Profile Avatar" 
+         class="profile-avatar">
+    <div class="profile-info">
+      <h4>{{ site.author_info.name | default: site.author }}</h4>
+      <p>{{ site.author_info.bio | default: "" }}</p>
+    </div>
+  </div>
+  
+  <div class="profile-links">
+    {%- if site.author_info.contact -%}
+    <span class="profile-item">Contact: {{ site.author_info.contact }}</span>
+    {%- endif -%}
+    {%- if site.author_info.github -%}
+    <span class="profile-item">GitHub: <a href="{{ site.author_info.github }}" target="_blank" rel="noopener noreferrer" class="profile-link">{{ site.author_info.github | remove: 'https://' | remove: 'http://' }}</a></span>
+    {%- endif -%}
+    {%- if site.author_info.website -%}
+    <span class="profile-item">Blog: <a href="{{ site.author_info.website }}" target="_blank" rel="noopener noreferrer" class="profile-link">{{ site.author_info.website | remove: 'https://' | remove: 'http://' }}</a></span>
+    {%- endif -%}
+  </div>
+</div>
