@@ -1,18 +1,13 @@
-// 모바일 강제 오버라이드
+// 모바일 반응형 스타일
 @media (max-width: 1024px) {
-  // 포스트 배너 텍스트 위로 올리기
   .post .page-banner .page-banner-inner {
     align-items: flex-start !important;
     justify-content: flex-start !important;
     padding-top: 20px !important;
-    display: flex !important;
-    height: 100% !important;
   }
   
-  // 포스트 내용 좌우 여백 줄이기
   .post {
     padding: 0 5px !important;
-    margin: 0 !important;
     max-width: 100% !important;
   }
   
@@ -24,8 +19,6 @@
   
   .post .post-content {
     padding: 0 5px !important;
-    margin: 0 0 30px !important;
     max-width: 100% !important;
-    width: 100% !important;
   }
 }

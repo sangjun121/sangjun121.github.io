@@ -1,71 +1,13 @@
-// Performance optimization - reduce animations and transitions
-// Disable heavy transitions and animations for better performance
+// Performance optimization - reduce unnecessary styles
 
-// Reduce global transition duration significantly
-$base-transition-duration: 0.1s !default;
-
-// Override heavy animations with lighter versions
+// Minimal theme toggle
 .theme-toggle {
   .toggle {
-    transition: transform 0.1s ease !important; // Much faster
-  }
-  
-  transition: 0.1s ease !important; // Much faster
-}
-
-// Simplify header transitions
-.site-header {
-  transition: 0.05s height, 0.05s background-color !important;
-  
-  .site-title {
-    transition: 0.05s color !important;
-  }
-  
-  .site-nav .page-link {
-    transition: 0.05s ease-in-out !important;
-  }
-}
-
-// Reduce banner animation
-.page-banner {
-  transition: height 0.1s !important;
-  
-  .page-banner-heading {
-    transition: 0.1s all !important;
-  }
-  
-  .page-banner-subheading {
-    transition: 0.1s all !important;
-  }
-}
-
-// Simplify other transitions
-.site-footer {
-  transition: background-color 0.1s !important;
-  
-  .site-footer-inner {
-    transition: border-top 0.1s !important;
+    transition: transform 0.1s ease;
   }
 }
 
 // Reduce post transitions
 .post-title, .post-meta {
-  transition: color 0.1s ease !important;
-}
-
-// Override body transition
-body {
-  transition-duration: 0.1s !important;
-}
-
-// Disable transform animations on mobile for better performance
-@media (max-width: 768px) {
-  * {
-    transform: none !important;
-    animation: none !important;
-  }
-  
-  .theme-toggle .toggle {
-    transition: none !important;
-  }
+  transition: color 0.1s ease;
 }

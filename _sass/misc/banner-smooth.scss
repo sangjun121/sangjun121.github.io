@@ -1,23 +1,17 @@
-// Optimized banner transitions - only essential ones
+// Essential transitions only
 .page-banner {
-  transition: height 0.2s ease-out !important;
+  transition: height 0.2s ease-out;
 }
 
-// Remove heavy transitions that cause lag
-// .page-banner .page-banner-inner > *:first-child > * {
-//   transition: all 0.3s ease-out !important;
-// }
-
-// Minimal header transitions
 .site-header {
-  transition: top 0.2s ease-out !important;
+  transition: top 0.2s ease-out;
 }
 
 .site-header-transparent {
-  transition: height 0.2s ease-out, background-color 0.2s ease-out !important;
+  transition: height 0.2s ease-out, background-color 0.2s ease-out;
 }
 
 .site-header-transparent .site-brand-inner,
 .site-header-transparent .page-link {
-  transition: color 0.2s ease-out !important;
+  transition: color 0.2s ease-out;
 }
