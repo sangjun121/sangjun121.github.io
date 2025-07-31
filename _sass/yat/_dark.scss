@@ -176,6 +176,30 @@ html[data-theme="dark"]  {
     }
   }
 
+  #global-author-profile-card {
+    background: #2d2d30 !important;
+    border: 1px solid #404040 !important;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 16px !important;
+    
+    .profile-info {
+      h4 {
+        color: #ffffff !important;
+      }
+      
+      p {
+        color: #cccccc !important;
+      }
+    }
+    
+    .profile-link {
+      color: #4CAF50 !important;
+      
+      &:hover {
+        color: #66BB6A !important;
+      }
+    }
+  }
+
   .page-segments {
     li {
       a {
