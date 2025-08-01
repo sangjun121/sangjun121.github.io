@@ -3,7 +3,7 @@ layout: post
 title: "Spring Security Exception Handling: Should GlobalExceptionHandler Handle Filter Exceptions?"
 subtitle: "A deep dive into Spring Security filter chain exception responsibility"
 author: Sangjun Cho
-categories: Spring Security SSOC
+categories: Spring SSOC
 lang: en
 banner:
   image: ../assets/images/springsecurityexception/securityExceptionHandling003.png

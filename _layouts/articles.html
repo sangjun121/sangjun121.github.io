@@ -8,7 +8,53 @@ sidebar: category-list
     {% assign banner = page.title %}
   {% endif %}
 
+  <!-- Category Filter Tabs -->
+  <div class="category-filter-container">
+    <div class="category-filter-tabs">
+      <button class="category-tab active" data-category="all">All</button>
+      {% assign categories = site.posts | map: 'categories' | join: ',' | split: ',' | uniq | sort %}
+      {% for category in categories %}
+        {% unless category == blank %}
+          <button class="category-tab" data-category="{{ category | strip }}">{{ category | strip }}</button>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+
   {{ content }}
 
   {% include views/pagination.html %}
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const categoryTabs = document.querySelectorAll('.category-tab');
+  const postItems = document.querySelectorAll('.post-item');
+
+  function filterPosts(selectedCategory) {
+    postItems.forEach(post => {
+      const postCategories = post.dataset.categories ? post.dataset.categories.toLowerCase() : '';
+      
+      if (selectedCategory === 'all' || postCategories.includes(selectedCategory.toLowerCase())) {
+        post.style.display = 'list-item';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+  }
+
+  categoryTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      // Remove active class from all tabs
+      categoryTabs.forEach(t => t.classList.remove('active'));
+      
+      // Add active class to clicked tab
+      this.classList.add('active');
+      
+      // Filter posts
+      const selectedCategory = this.dataset.category;
+      filterPosts(selectedCategory);
+    });
+  });
+});
+</script>

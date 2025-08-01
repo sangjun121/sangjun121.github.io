@@ -27,7 +27,7 @@
   | default: default_image
   | default: '/assets/images/default-image.jpeg' -%}
 
-<li class="post-item {{ post_item_class }}">
+<li class="post-item {{ post_item_class }}" data-categories="{{ post.categories | join: ',' }}">
   <a href="{{ post_url }}" class="post-item-link">
     <div class="post-content-area">
       <div class="post-author-info">
